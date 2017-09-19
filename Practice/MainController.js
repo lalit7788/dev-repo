@@ -7,7 +7,7 @@ angular.module("todoApp", [])
 			var found = false;
 			if($scope.title) {
 				for(var i = 0; i < $scope.tasks.length; i++) {
-					if($scope.tasks[i] === $scope.title) {
+					if($scope.tasks[i].toLowercase() === $scope.title.toLowerCase()) {
 						found = true;
 						break;
 					}
