@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<title>My first Angular App</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<script src="MainController.js"></script>
+</head>
+<body>
+	<div ng-app="todoApp" class="TodoApp">
+		<div ng-controller="todoController">
+			<h2 class="Header">My Shopping List</h2>
+			<ul class="BuyList">
+				<li class="BuyListItem" ng-repeat="t in tasks track by $index">{{t}}<i class="fa fa-remove DeleteIcon" ng-click="delete()"></i></li>
+			</ul>
+			<p class="ErrorMessage">{{errorText}}</p>
+			<div class="FooterPanel">
+				<form ng-submit="add()">
+					<input ng-model="title" placeholder="Add shopping items here"></input>
+					<button>Add</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
